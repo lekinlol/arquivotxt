@@ -1,0 +1,2 @@
+# arquivotxt
+documento
