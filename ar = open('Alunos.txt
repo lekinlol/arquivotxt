@@ -1,0 +1,34 @@
+ar = open('Alunos.txt', 'r')
+linhas = ar.readlines()
+del linhas [:4]
+quant_anun = 0
+quant_org = 0
+quant_yt_org = 0
+quant_igfb_org = 0
+quant_site_org = 0
+for linha in linhas:
+    email, origem = linha.split(',')
+    if '_org' in origem:
+        quant_org += 1
+        if 'hashtag_site_org' in origem:
+            quant_site_org += 1
+        if 'hashtag_yt_org' in origem:
+            quant_yt_org += 1
+        if 'hashtag_igfb_org' in origem or 'hashtag_ig_org' in origem:   
+            quant_igfb_org += 1
+            
+    else:
+        quant_anun += 1
+    
+      
+
+print('quantidade de anuncio foi {} '.format(quant_anun))
+print('quantidade de organico foi {} '.format(quant_org))
+print('quantidade de youtube foi {} '.format(quant_yt_org))
+print('quantidade de instagram e facebook foi {} '.format(quant_igfb_org))
+print('quantidade de site foi {} '.format(quant_site_org))
+
+
+         
+
+ar.close()
